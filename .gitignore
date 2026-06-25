@@ -1,1 +1,4 @@
 .DS_Store
+.deps/npm/@openzeppelin/contracts/
+artifacts/
+.states/vm-cancun/

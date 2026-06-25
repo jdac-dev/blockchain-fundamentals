@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: LGPL-3.0-only
 
 // Version solidity
-pragma solidity 0.8.24;
+pragma solidity 0.8.35;
 
 // Contrato
-contract Calculadora {
+contract Calculator {
 
     // Variables
     uint256 public resultado = 10; // [ 0 - 2^256 - 1 ]
