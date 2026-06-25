@@ -1,0 +1,32 @@
+// Licencia
+// SPDX-License-Identifier: LGPL-3.0-only
+
+// Version
+pragma solidity 0.8.35;
+
+error SenderNotadmin(address, string);//Permite parametros
+
+//Contrato
+contract RequireTest {
+
+    address public admin;
+
+    constructor(address admin_) {
+        admin = admin_;
+    }
+
+    //Function + if check: msg.sender sea igual a admin
+    function checkAdmin() public view {
+        if (msg.sender != admin) revert();
+     }
+    //Function + require check: msg.sender sea igual a admin
+    function checkAdminRequire() public view {
+        require(msg.sender == admin, "Msg.sender is not admin");
+    }
+    //Function + if + custom error
+    //Consume menos gas que el require
+    function checkAdminCustomErrors() public view {
+        if (msg.sender != admin) revert SenderNotadmin(msg.sender, "Mensaje de error");
+    }
+
+}
